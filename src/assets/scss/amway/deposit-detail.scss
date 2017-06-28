@@ -1,0 +1,65 @@
+.amway-deposit-detail {
+  color: $gray;
+  a {
+    padding: .16rem .18rem;
+    background-color: #fff;
+    align-items: center;
+    color: $gray;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .box {
+    @include box;
+    @include box-align;
+  }
+  .box:not(:last-of-type) {
+    border-bottom: .01rem solid #dcdcdc;
+  }
+  .column {
+    @include dis-flex;
+    @include flex-direction(column);
+    @include justify-content(space-between);
+  }
+  .left {
+    color: $secondary;
+    width: 19%;
+  }
+  >div {
+    @include box-flex;
+  }
+  .middle {
+    text-align: left;
+    width: 57%;
+  }
+  .right {
+    text-align: right;
+    width: 24%;
+  }
+  time {
+    font-size: .12rem;
+    color: $gray-light;
+  }
+  .no-data {
+    text-align: center;
+    margin-top: .8rem;
+  }
+}
+
+.has-app {
+  .amway-deposit-detail {
+    .no-data {
+      margin-top: 1.05rem;
+    }
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .amway-deposit-detail {
+    .left {
+      width: 24%;
+    }
+    .middle {
+      width: 52%;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+/*  安利项目
+/* 编码设置 */
+@charset "utf-8";
+
+/* 变量设置 */
+@import "../base/variables.scss";
+
+
+/*
+* mixin 所有自定义mixin
+* 每个功能模块都定义一个mixin
+*/
+@import "../mixin/mixins.scss";
+
+/*
+ *返利首页
+ */
+@import "./amway.scss";
+
+/*
+*  商品详情
+
+@import "./goods.scss";
+
+/*
+ *我的收益
+
+@import "./income_bak.scss";
+
+/*
+ *收益明细
+ 
+@import "./income-detail.scss";
+
+/*
+ *提现和返利规则
+ 
+@import "./rule.scss";
+
+
+
+/*
+ *提现
+ 
+@import "./deposit.scss";
+
+/*
+ *提现记录
+ 
+@import "./deposit-detail.scss";
+
+/*
+ *身份认证
+ 
+@import "./real.scss";
+
+/*
+ *提取进度页
+ 
+@import "./finish.scss";
+
+*/
