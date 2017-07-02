@@ -1,22 +1,30 @@
 <template>
     <div class="has-footer">
         <footer class="main-nav">
-            <router-link to="/" class="footer-item active" href="#">
-                <i class="iconfont icon-homeclick"></i>
+            <router-link to="/" class="footer-item" href="#">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-shouye"></use>
+                </svg>
                 <span>首页</span>
             </router-link>
-            <router-link to="hello" href="#">
-                <i class="iconfont icon-kinddefault"></i>
+            <router-link to="class">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-all"></use>
+                </svg>
                 <span>分类</span>
             </router-link>
-            <router-link to="amway" href="#">
-                <i class="iconfont icon-cartdefault"></i>
+            <router-link to="cart">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche"></use>
+                </svg>
                 <span>购物车</span>
             </router-link>
-            <a class="footer-item" href="#">
-                <i class="iconfont icon-centerdefault"></i>
-                <span>我的果园</span>
-            </a>
+            <router-link to="me">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-yonghumorentouxiang"></use>
+                </svg>
+                <span>我的</span>
+            </router-link>
         </footer>
     </div>
 </template>
@@ -35,34 +43,37 @@ export default {
 <style lang='scss' scoped>
     @import '../assets/scss/mixin/mixins';
     .has-footer{
-        margin-bottom: .42rem;
+        margin-bottom: .5rem;
     }
     .main-nav {
         @include fix-pos(auto, 0);
         @include display;
         box-shadow:0px -2px 2px 0px rgba(0,0,0,0.15);
         background: #fff;
-        height: .42rem;
-        font-size: .1rem;
+        height: .48rem;
         line-height: $line-height-s;
+        z-index: 100;
         a {
-            width: 100%;
-            color: #898989;
+            width: 1%;
+            color: $gray;
             display: block;
             text-align: center;
             @include flex();
-            &.active {
+            &.router-link-exact-active {
                 color: $primary;
+                fill: $primary;
             }
         }
-        img {
-            margin: .03rem auto .04rem;
-            height: .21rem;
-            width: auto;
+        span{
+            font-size: .1rem;
         }
-        i {
+        .icon {
+            width: .26rem; 
+            height: .26rem;
             display: block;
-            font-size: .24rem;
+            margin: auto;
+            overflow: hidden;
+            padding-top: .04rem;
         }
     }
 </style>

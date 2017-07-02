@@ -24,6 +24,5 @@ export default {
     @import './assets/scss/base/variables';
     @import './assets/scss/mixin/mixins';
     @import './assets/scss/base/normalize';
-    @import './assets/scss/base/iconfont';
     @import './assets/scss/base/common';
 </style>
