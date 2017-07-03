@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <ul class="class">
+    <div class="class">
+        <ul class="tab">
             <li :class="{ active: currTab == 0 }" @click="tab(0)">新鲜水果</li>
             <li :class="{ active: currTab == 1 }" @click="tab(1)">肉类禽蛋</li>
             <li>新鲜水果</li>
@@ -104,7 +104,8 @@ export default {
 
 <style scoped lang="scss">
     @import '../../assets/scss/mixin/mixins';
-    .class{
+    .class{}
+    .tab{
         width: .78rem;
         position: fixed;
         left: 0;
