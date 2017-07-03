@@ -2,6 +2,7 @@ export default {
     title: '趣鱼网',
     homeAds:'',
     currentArea:'睿智禧园',
+    currentClass: 0,
     areaListState: 0, //0隐藏， 1显示
     homeBanner: {
     	options: {

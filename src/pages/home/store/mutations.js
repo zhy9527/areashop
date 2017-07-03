@@ -9,5 +9,8 @@ export default {
     },
     [types.CURRENT_AREA](state,data){
         state.currentArea = data
+    },
+    [types.CURRENT_CLASS_TAB](state,data){
+        state.currentClass = data
     }
 }

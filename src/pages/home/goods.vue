@@ -1,22 +1,27 @@
 <template>
     <div class="goods">
         <ul class="tab">
-           <li class="active">商品</li> 
-           <li>详情</li> 
+           <li :class="{ active: currTab == 0 }" @click="tab(0)">商品</li> 
+           <li :class="{ active: currTab == 1 }" @click="tab(1)">详情</li> 
         </ul>
-        <swiper :swiperDate="home.homeBanner">
-            <slot name="pagination"></slot>
-        </swiper>
-        <div class="info">
-            <h3>女神樱桃-美国加州樱桃</h3>
-            <div class="price"><em><span>￥</span>166.00</em><span>5个</span></div>
-            <div class="btn">加入购物车</div>
+        <div class="detail" v-if="currTab == 0">
+            <swiper :swiperDate="home.homeBanner">
+                <slot name="pagination"></slot>
+            </swiper>
+            <div class="info">
+                <h3>女神樱桃-美国加州樱桃</h3>
+                <div class="price"><em><span>￥</span>166.00</em><span>5个</span></div>
+                <div class="btn">加入购物车</div>
+            </div>
+            <div class="hot">
+                <div>为您推荐</div>
+                <span>简单点，生活的方式简单点</span>
+            </div>
+            <goods-list :goodsListDate="home.homeClass[0].goods"></goods-list>
         </div>
-        <div class="hot">
-            <div>为您推荐</div>
-            <span>简单点，生活的方式简单点</span>
+        <div class="desc" v-if="currTab == 1">
+            描述
         </div>
-        <goods-list :goodsListDate="home.homeClass[0].goods"></goods-list>
         <v-footer></v-footer>
     </div>
 </template>
@@ -29,6 +34,9 @@ import swiper from '../../components/swiper.vue'
 
 export default {
     name: 'goods',
+    data: ()=>({
+        currTab: 0
+    }),
     beforeCreate: function () {
         // console.log(Config)
         // this.$store.dispatch('getHomeAds');
@@ -39,9 +47,8 @@ export default {
         })
     },
     methods: {
-        areaSelect: function(state,currentArea){
-            this.$store.commit('AREA_LIST_STATE', state)
-            this.$store.commit('CURRENT_AREA', currentArea)
+        tab: function(index){
+            this.currTab = index
         }
     },
     components: {
@@ -121,5 +128,8 @@ export default {
             font-size: .11rem;
             color: $gray-light;
         }
+    }
+    .desc,.detail{
+        margin-top: .44rem;
     }
 </style>

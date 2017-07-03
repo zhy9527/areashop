@@ -18,6 +18,7 @@
                 <li @click="areaSelect(0,'睿智禧园')">睿智禧园</li>
                 <li @click="areaSelect(0,'祝福红城')">祝福红城</li>
                 <li @click="areaSelect(0,'河南省大学科技园')">河南省大学科技园</li>
+                <li>其他区域，敬请期待...</li>
             </ul>
         </div>
     </div>

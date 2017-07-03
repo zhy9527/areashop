@@ -1,12 +1,12 @@
 <template>
     <div class="class">
         <ul class="tab">
-            <li :class="{ active: currTab == 0 }" @click="tab(0)">新鲜水果</li>
-            <li :class="{ active: currTab == 1 }" @click="tab(1)">肉类禽蛋</li>
+            <li :class="{ active: home.currentClass == 0 }" @click="tab(0)">新鲜水果</li>
+            <li :class="{ active: home.currentClass == 1 }" @click="tab(1)">肉类禽蛋</li>
             <li>新鲜水果</li>
             <li>肉类禽蛋</li>
         </ul>
-        <div class="item" v-show="currTab == 0">
+        <div class="item" v-show="home.currentClass == 0">
             <a href="">
                 <img src="https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg" alt="">
                 <dl>
@@ -41,7 +41,7 @@
                 </svg>
             </a>
         </div>
-        <div class="item" v-show="currTab == 1">
+        <div class="item" v-show="home.currentClass == 1">
             <a href="">
                 <img src="https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg" alt="">
                 <dl>
@@ -75,9 +75,6 @@ import footer from '../../components/footer.vue'
 
 export default {
     name: 'class',
-    data: ()=>({
-        currTab: 0
-    }),
     beforeCreate: function () {
         // console.log(Config)
         this.$store.dispatch('getHomeAds');
@@ -89,11 +86,9 @@ export default {
     },
     methods: {
         tab: function(index){
-            this.currTab = index
+            console.log(this.$store.state)
+            this.$store.commit('CURRENT_CLASS_TAB', index)
         }
-    },
-    watch: {
-
     },
     components: {
         'v-footer': footer,
