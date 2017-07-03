@@ -10,6 +10,7 @@ import notFoundComponent from '../components/notFoundComponent.vue'
 import homeIndex from '../pages/home/index.vue'
 import home from '../pages/home/home.vue'
 import goodsClass from '../pages/home/class.vue'
+import goods from '../pages/home/goods.vue'
 
 
 // import hello from '../pages/hello/components/hello.vue'
@@ -39,6 +40,7 @@ export default new Router({
             ]
         },
         { path: '/class', component: goodsClass },
+        { path: '/goods', component: goods },
         
     ]
 })

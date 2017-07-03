@@ -1,12 +1,12 @@
 <template>
     <div>
         <ul class="class">
-            <li>新鲜水果</li>
-            <li class="active">肉类禽蛋</li>
+            <li :class="{ active: currTab == 0 }" @click="tab(0)">新鲜水果</li>
+            <li :class="{ active: currTab == 1 }" @click="tab(1)">肉类禽蛋</li>
             <li>新鲜水果</li>
             <li>肉类禽蛋</li>
         </ul>
-        <div class="item">
+        <div class="item" v-show="currTab == 0">
             <a href="">
                 <img src="https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg" alt="">
                 <dl>
@@ -41,6 +41,30 @@
                 </svg>
             </a>
         </div>
+        <div class="item" v-show="currTab == 1">
+            <a href="">
+                <img src="https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg" alt="">
+                <dl>
+                    <dt>明治保加利亚LB81酸奶明治保加利亚LB81酸奶明治保加利亚LB81酸奶(清甜原味)</dt>
+                    <dd>180克</dd>
+                    <div><strong>￥18.00</strong> <del>$17.00</del></div>
+                </dl>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche"></use>
+                </svg>
+            </a>
+            <a href="">
+                <img src="https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg" alt="">
+                <dl>
+                    <dt>明治保加利亚LB81</dt>
+                    <dd></dd>
+                    <div><strong>￥18.00</strong> <del>$17.00</del></div>
+                </dl>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche"></use>
+                </svg>
+            </a>
+        </div>
         <v-footer></v-footer>
     </div>
 </template>
@@ -50,7 +74,10 @@ import { mapState, mapGetters, mapActions } from 'vuex'
 import footer from '../../components/footer.vue'
 
 export default {
-    name: 'home',
+    name: 'class',
+    data: ()=>({
+        currTab: 0
+    }),
     beforeCreate: function () {
         // console.log(Config)
         this.$store.dispatch('getHomeAds');
@@ -61,10 +88,12 @@ export default {
         })
     },
     methods: {
-        areaSelect: function(state,currentArea){
-            this.$store.commit('AREA_LIST_STATE', state)
-            this.$store.commit('CURRENT_AREA', currentArea)
+        tab: function(index){
+            this.currTab = index
         }
+    },
+    watch: {
+
     },
     components: {
         'v-footer': footer,
@@ -96,7 +125,7 @@ export default {
         }
     }
     .item{
-        margin-left: .83rem;
+        margin-left: .82rem;
         padding-bottom: .5rem;
         a{
             position: relative;

@@ -10,11 +10,11 @@ export default {
     	},
     	slide: [
     		{
-    			url: 'https://m.fruitday.com/',
+    			url: '/goods',
     			content: 'https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg'
     		},
     		{
-    			url: 'https://m.fruitday.com/',
+    			url: '/goods',
     			content: 'https://imgjd4.fruitday.com/images/product_pic/432/1/1-370x370-432-R4XA1F1T.jpg'
     		}
     	]
