@@ -5,12 +5,13 @@ import notFoundComponent from '../components/notFoundComponent.vue'
 
 /*
  * 首页组件
- * 包含首页，商品分类，商品分类列表，商品详情
+ * 包含首页，商品分类，商品分类列表，商品详情，购物车
  */
 import homeIndex from '../pages/home/index.vue'
 import home from '../pages/home/home.vue'
 import goodsClass from '../pages/home/class.vue'
 import goods from '../pages/home/goods.vue'
+import cart from '../pages/home/cart.vue'
 
 
 // import hello from '../pages/hello/components/hello.vue'
@@ -41,6 +42,7 @@ export default new Router({
         },
         { path: '/class', component: goodsClass },
         { path: '/goods', component: goods },
+        { path: '/cart', component: cart },
         
     ]
 })
