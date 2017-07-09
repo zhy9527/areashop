@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="home-class" v-for="item in classDate" :key="item.id">
-            <img :src="item.img" alt="">
+            <img :style="imgBigHeight" :src="item.img" alt="">
             <swiper :options="swiperOption" class="item">
                 <swiper-slide class="goods" v-for="list in item.goods" :key="list.id">
                     <a href="">
@@ -30,6 +30,13 @@ export default {
         classDate: {
             type: Array,
             default: () => classDate
+        }
+    },
+    computed: {
+        imgBigHeight: function () {
+            return {
+                'height': window.innerWidth/2.5 + 'px'
+            }
         }
     },
     components: {

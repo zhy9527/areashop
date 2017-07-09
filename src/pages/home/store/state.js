@@ -6,6 +6,7 @@ export default {
     areaListState: 0, //0隐藏， 1显示
     homeBanner: {
     	options: {
+    		height: window.innerWidth/2 + 'px',
     		autoplay : 5000,
     		pagination : '.swiper-pagination',
     	},

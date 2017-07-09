@@ -3,8 +3,8 @@
         <ul class="tab">
             <li :class="{ active: home.currentClass == 0 }" @click="tab(0)">新鲜水果</li>
             <li :class="{ active: home.currentClass == 1 }" @click="tab(1)">肉类禽蛋</li>
-            <li>新鲜水果</li>
-            <li>肉类禽蛋</li>
+            <li :class="{ active: home.currentClass == 2 }" @click="tab(2)">新鲜水果</li>
+            <li :class="{ active: home.currentClass == 3 }" @click="tab(3)">肉类禽蛋</li>
         </ul>
         <div class="item" v-show="home.currentClass == 0">
             <a href="">
@@ -12,28 +12,6 @@
                 <dl>
                     <dt>明治保加利亚LB81酸奶明治保加利亚LB81酸奶明治保加利亚LB81酸奶(清甜原味)</dt>
                     <dd>180克</dd>
-                    <div><strong>￥18.00</strong> <del>$17.00</del></div>
-                </dl>
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-gouwuche"></use>
-                </svg>
-            </a>
-            <a href="">
-                <img src="https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg" alt="">
-                <dl>
-                    <dt>明治保加利亚LB81</dt>
-                    <dd></dd>
-                    <div><strong>￥18.00</strong> <del>$17.00</del></div>
-                </dl>
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-gouwuche"></use>
-                </svg>
-            </a>
-            <a href="">
-                <img src="https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg" alt="">
-                <dl>
-                    <dt>明治保加利亚LB81</dt>
-                    <dd></dd>
                     <div><strong>￥18.00</strong> <del>$17.00</del></div>
                 </dl>
                 <svg class="icon" aria-hidden="true">
@@ -65,6 +43,12 @@
                 </svg>
             </a>
         </div>
+        <div class="item" v-show="home.currentClass == 2">
+            3
+        </div>
+        <div class="item" v-show="home.currentClass == 3">
+            4
+        </div>
         <v-footer></v-footer>
     </div>
 </template>
@@ -86,7 +70,6 @@ export default {
     },
     methods: {
         tab: function(index){
-            console.log(this.$store.state)
             this.$store.commit('CURRENT_CLASS_TAB', index)
         }
     },

@@ -1,88 +1,47 @@
 <template>
     <div class="cart">
-        <swiper :options="swiperOption">
-            <swiper-slide>
-                1
-            </swiper-slide>
-            <swiper-slide class="menu swiper-slide-next">
-                1
-            </swiper-slide>
-        </swiper>    
+        <div class="item">
+            <mt-cell-swipe
+                v-for="item in 4"
+                :key="item.id"
+                :right="[{
+                    content: '删除',
+                    style: { background: 'red', color: '#fff', 'line-height': '90px' },
+                    handler: () => this.messagebox('delete')
+                }]">
+                <div class="goods">
+                    <div class="check">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-duihao"></use>
+                        </svg>
+                    </div>
+                    <img src="https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg" alt="">
+                    <dl>
+                        <dt>明治保加利亚LB81酸奶明治保加利亚LB81酸奶明治保加利亚LB81酸奶(清甜原味)</dt>
+                        <dd>180克</dd>
+                        <div><strong>￥18.00</strong></div>
+                    </dl>
+                    <div class="qty">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-jianhao"></use>
+                        </svg>
+                        <span> 12 </span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-add"></use>
+                        </svg>
+                    </div>   
+                </div>                 
+            </mt-cell-swipe>
+        </div>
         <v-footer></v-footer>
     </div>
 </template>
 
-<!-- <div class="swiper-container swiper-container-horizontal">
-        <div class="swiper-wrapper" style="transform: translate3d(-320px, 0px, 0px); transition-duration: 0ms;">
-            <div class="swiper-slide menu swiper-slide-prev">Menu slide</div>
-            <div class="swiper-slide content swiper-slide-active">
-                
-                Content slide
-            </div>
-        </div>
-    </div> -->
-<!-- 
-        var toggleMenu = function(){
-            if (swiper.previousIndex == 0)
-                swiper.slidePrev()
-        }
-        , menuButton = document.getElementsByClassName('menu-button')[0]
-        , swiper = new Swiper('.swiper-container', {
-            slidesPerView: 'auto'
-            , initialSlide: 1
-            , resistanceRatio: .00000000000001
-            , onSlideChangeStart: function(slider) {
-                if (slider.activeIndex == 0) {
-                    menuButton.classList.add('cross')
-                    menuButton.removeEventListener('click', toggleMenu, false)
-                } else
-                    menuButton.classList.remove('cross')
-            }
-            , onSlideChangeEnd: function(slider) {
-                if (slider.activeIndex == 0)
-                    menuButton.removeEventListener('click', toggleMenu, false)
-                else
-                    menuButton.addEventListener('click', toggleMenu, false)
-            }
-            , slideToClickedSlide: true
-        }) -->
-    
-
-
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import footer from '../../components/footer.vue'
 
 export default {
     name: 'class',
-    data() {
-        return {
-            // toggleMenu: function(){
-            //     if (swiper.previousIndex == 0)
-            //         swiper.slidePrev()
-            // },
-            swiperOption: {
-                slidesPerView: 'auto',
-                initialSlide: 0,
-                resistanceRatio: .91,
-                slideToClickedSlide: true,
-                onSlideChangeStart: function(slider) {
-                    // if (slider.activeIndex == 0) {
-                    //     // menuButton.classList.add('cross')
-                    //     // menuButton.removeEventListener('click', toggleMenu, false)
-                    // } else
-                    //     // menuButton.classList.remove('cross')
-                },
-                onSlideChangeEnd: function(slider) {
-                    // if (slider.activeIndex == 0)
-                    //     // menuButton.removeEventListener('click', toggleMenu, false)
-                    // else
-                        // menuButton.addEventListener('click', toggleMenu, false)
-                }
-            }
-        }
-    },
     beforeCreate: function () {
         // console.log(Config)
         // this.$store.dispatch('getHomeAds');
@@ -93,15 +52,15 @@ export default {
         })
     },
     methods: {
-        tab: function(index){
-            console.log(this.$store.state)
-            this.$store.commit('CURRENT_CLASS_TAB', index)
-        }
+        messagebox: function(){
+            console.log('删除')
+        },
+    },
+    mounted: function() {
+        // console.log('this is current swiper instance object', this)
+        // this.swiper.slideTo(1)
     },
     components: {
-        'v-footer': footer,
-        swiper,
-        swiperSlide
     }
 
 }
@@ -109,14 +68,66 @@ export default {
 
 <style scoped lang="scss">
     @import '../../assets/scss/mixin/mixins';
-    .class{}
-    .swiper-slide{
-        height: 60px;
-        background: #f00;
+    .item{
+        
+        position: relative;
     }
-    .menu {
-        width: 100px;
-        background-color: #2C8DFB;
-        color: #fff;
+    .goods{
+        position: relative;
+        @include display;
+        @include align-items;
+        padding: .1rem 0;
+        img{
+            width: .8rem;
+            height: .8rem;
+            margin: 0 .08rem;
+            border-radius: .04rem;
+        }
+        dl{
+            @include flex;
+            div{
+                line-height: 1;
+            }
+        }
+        dt{
+            @include ellipsis(2);
+            color: $gray;
+            font-size: .12rem;
+            height: .35rem;
+            line-height: .16rem;
+        }
+        dd{
+            @include ellipsis;
+            color: $gray-light;
+            height: .3rem;
+            line-height: .3rem;
+            font-size: .11rem;
+        }
+        strong{
+            color: $primary;
+            font-weight: normal;
+        }
+    }
+    .qty{
+        position: absolute;
+        bottom: .1rem;
+        right: 0rem;
+        text-align: center;
+        @include display;
+        span{
+            @include flex;
+            line-height: .24rem;
+            padding: 0 .06rem;
+            font-size: .13rem;
+        }
+    }
+    .icon {
+        width: .18rem; 
+        height: .18rem;
+        overflow: hidden;
+        fill: $primary;
+        padding: .02rem;
+        border-radius: 100%;
+        border:.01rem solid $line;
     }
 </style>

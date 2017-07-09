@@ -1,7 +1,7 @@
 <template>
     <header>
         <img src="../../../assets/images/common/logo.png" alt="">
-        <div class="address" @click="areaSelect(1)">
+        <div class="address"  @click="areaSelect(true)">
             <span>{{this.$store.state.home.currentArea}}</span>
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-shouhuodizhi"></use>
@@ -42,7 +42,7 @@ export default {
         @include display;
         height: .42rem;
         line-height: .42rem;
-        z-index: 100;
+        z-index: 1;
         img{
             width: auto;
             height: .3rem;

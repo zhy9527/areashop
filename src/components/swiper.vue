@@ -1,11 +1,11 @@
 <template>
     <swiper :options="swiperOption">
-        <swiper-slide v-for="item in swiperDate.slide" :key="item.id">
+        <swiper-slide v-for="item in swiperDate.slide" :key="item.id" :style="imgHeight">
             <a :href="item.url">
                 <img :src="item.content" alt="">
             </a>
         </swiper-slide>
-        <div class="swiper-pagination"  slot="pagination"></div>
+        <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
 </template>
 
@@ -22,6 +22,13 @@ export default {
         swiperDate: {
             type: Object,
             default: () => swiperDate
+        }
+    },
+    computed: {
+        imgHeight: function () {
+            return {
+                'height': this.swiperDate.options.height
+            }
         }
     },
     components: {

@@ -29,8 +29,6 @@
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
 import goodsList from '../../components/goodsList.vue'
-import footer from '../../components/footer.vue'
-import swiper from '../../components/swiper.vue'
 
 export default {
     name: 'goods',
@@ -52,8 +50,6 @@ export default {
         }
     },
     components: {
-        'v-footer': footer,
-        swiper,
         'goods-list': goodsList
     }
 

@@ -24,5 +24,6 @@ export default {
     @import './assets/scss/base/variables';
     @import './assets/scss/mixin/mixins';
     @import './assets/scss/base/normalize';
+    @import '../node_modules/mint-ui/lib/style.min.css';
     @import './assets/scss/base/common';
 </style>

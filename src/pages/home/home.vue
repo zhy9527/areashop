@@ -1,6 +1,5 @@
 <template>
     <div class="home">
-        <home-header></home-header>
         <swiper :swiperDate="home.homeBanner">
             <slot name="pagination"></slot>
         </swiper>
@@ -11,6 +10,7 @@
             <span>简单点，生活的方式简单点</span>
         </div>
         <goods-list :goodsListDate="home.homeClass[0].goods"></goods-list>
+        <home-header></home-header>
         <v-footer></v-footer>
         <div class="area-list" v-if="home.areaListState">
             <div>选择配送小区</div>
@@ -30,8 +30,6 @@ import homeHeader from './components/homeHeader.vue'
 import news from './components/homeNews.vue'
 import homeClass from './components/homeClass.vue'
 import goodsList from '../../components/goodsList.vue'
-import footer from '../../components/footer.vue'
-import swiper from '../../components/swiper.vue'
 
 export default {
     name: 'home',
@@ -52,13 +50,10 @@ export default {
     },
     components: {
         'home-header': homeHeader,
-        'v-footer': footer,
-        swiper,
         news,
         'home-class': homeClass,
-        'goods-list': goodsList
+        'goods-list': goodsList,
     }
-
 }
 </script>
 
@@ -84,16 +79,16 @@ export default {
     }
     .area-list{
         position: fixed;
-        top: .8rem;
+        top: 1.2rem;
         left: 10%;
         width: 80%;
         text-align: center;
-        z-index: 10;
         background: #fff;
         border-radius: .04rem;
         opacity: .96;
         padding-bottom: .1rem;
         box-shadow: 0 0 .6rem $gray-light;
+        z-index: 1;
         div{
            line-height: .5rem;
            font-size: .14rem; 
