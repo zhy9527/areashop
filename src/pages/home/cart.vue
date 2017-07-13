@@ -11,7 +11,7 @@
                 :right="[{
                     content: '删除',
                     style: { background: 'red', color: '#fff', 'line-height': '90px' },
-                    handler: () => this.messagebox('delete')
+                    handler: () => messagebox(item)
                 }]">
                 <div class="goods">
                     <div class="check">
@@ -41,6 +41,23 @@
                 </div>                 
             </mt-cell-swipe>
         </div>
+        <div class="checkout">
+            <div class="check">
+                <svg class="icon" >
+                    <use xlink:href="#icon-duihao"></use>
+                </svg>
+                全选
+            </div>
+            <div class="price">
+                <div>
+                    <small>￥</small><strong>321.10</strong>
+                </div>
+                <span>共优惠￥189.00</span>
+            </div>
+            <div class="btn">
+                结算
+            </div>
+        </div>
         <v-footer></v-footer>
     </div>
 </template>
@@ -60,8 +77,8 @@ export default {
         })
     },
     methods: {
-        messagebox: function(){
-            console.log('删除')
+        messagebox: function(index){
+            console.log(index)
         },
     },
     mounted: function() {
@@ -81,8 +98,8 @@ export default {
 .mint-cell-value{
     width: 100%;
 }
-.main-nav{
-   
+.cart .main-nav{
+   box-shadow: initial;
 }
 </style>
 <style scoped lang="scss">
@@ -90,9 +107,7 @@ export default {
 .has-footer{
     margin-bottom: 1rem;
 }
-
 .item{
-    
     position: relative;
 }
 .mint-cell-title{
@@ -173,6 +188,56 @@ export default {
         background: $primary;
         border:.01rem solid $primary;
         fill: #fff;
+    }
+}
+.checkout{
+    @include display;
+    position: fixed;
+    left: 0;
+    bottom: .45rem;
+    width: 100%;
+    background: #fff;
+    line-height: .4rem;
+    box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.15);
+    .check{
+        text-align: left;
+        padding: 0 .1rem;
+        color: $gray-light;
+        font-size: .12rem;
+        .icon{
+            float: left;
+            margin-top: .11rem;
+            margin-right: .1rem;
+        }
+    }
+    .price{
+        padding: 0 .1rem;
+        margin-top: .06rem;
+        @include flex;
+        line-height: 1;
+        text-align: right;
+    }
+    small,strong{
+        color: $primary;
+    }
+    small{
+        
+    }
+    strong{
+        
+    }
+    small,span{
+        font-size: .1rem;
+        font-weight: 200;
+    }
+    span{
+        color: $gray-light;
+    }
+    .btn{
+        background: $primary;
+        color: #fff;
+        width: .8rem;
+        text-align: center;
     }
 }
 </style>

@@ -89,7 +89,7 @@ export default {
         left: 0;
         top: 0;
         background: #fff;
-        height: calc(100% - .5rem);
+        height: calc(100% - .46rem);
         text-align: center;
         overflow: auto;
         li{
