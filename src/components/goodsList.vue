@@ -44,6 +44,7 @@ export default {
     span, em {
         display: block;
         @include ellipsis;
+        text-align: left;
     }
     span {
         line-height: 1.5;
@@ -53,7 +54,7 @@ export default {
     em {
         margin-top: .06rem;
         color: $primary;
-        text-align: left;
+        
     }
     .icon{
         position: absolute;

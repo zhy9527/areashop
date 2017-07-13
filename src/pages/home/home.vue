@@ -12,14 +12,16 @@
         <goods-list :goodsListDate="home.homeClass[0].goods"></goods-list>
         <home-header></home-header>
         <v-footer></v-footer>
-        <div class="area-list" v-if="home.areaListState">
-            <div>选择配送小区</div>
-            <ul>
-                <li @click="areaSelect(0,'睿智禧园')">睿智禧园</li>
-                <li @click="areaSelect(0,'祝福红城')">祝福红城</li>
-                <li @click="areaSelect(0,'河南省大学科技园')">河南省大学科技园</li>
-                <li>其他区域，敬请期待...</li>
-            </ul>
+        <div class="cover" @click="areaSelect(0)" v-if="home.areaListState">
+            <div class="area-list">
+                <div>选择配送小区</div>
+                <ul>
+                    <li @click="areaSelect(0,'睿智禧园')">睿智禧园</li>
+                    <li @click="areaSelect(0,'祝福红城')">祝福红城</li>
+                    <li @click="areaSelect(0,'河南省大学科技园')">河南省大学科技园</li>
+                    <li>其他区域，敬请期待...</li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -45,7 +47,8 @@ export default {
     methods: {
         areaSelect: function(state,currentArea){
             this.$store.commit('AREA_LIST_STATE', state)
-            this.$store.commit('CURRENT_AREA', currentArea)
+            currentArea ? this.$store.commit('CURRENT_AREA', currentArea) : 0
+            // this.$store.commit('CURRENT_AREA', currentArea)
         }
     },
     components: {
@@ -78,17 +81,14 @@ export default {
         }
     }
     .area-list{
-        position: fixed;
-        top: 1.2rem;
-        left: 10%;
         width: 80%;
+        margin:20% auto 0;
         text-align: center;
         background: #fff;
         border-radius: .04rem;
         opacity: .96;
         padding-bottom: .1rem;
         box-shadow: 0 0 .6rem $gray-light;
-        z-index: 1;
         div{
            line-height: .5rem;
            font-size: .14rem; 

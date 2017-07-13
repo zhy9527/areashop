@@ -3,7 +3,11 @@
         <div class="item">
             <mt-cell-swipe
                 v-for="item in 4"
-                :key="item.id"
+                :key="item.id" 
+                :left="[{
+                    content: '删除',
+                    style: { display: 'none'}
+                }]"  
                 :right="[{
                     content: '删除',
                     style: { background: 'red', color: '#fff', 'line-height': '90px' },
@@ -11,24 +15,28 @@
                 }]">
                 <div class="goods">
                     <div class="check">
-                        <svg class="icon" aria-hidden="true">
+                        <svg class="icon" :class="{ checked: item ==3 }" aria-hidden="true">
                             <use xlink:href="#icon-duihao"></use>
                         </svg>
                     </div>
                     <img src="https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg" alt="">
                     <dl>
-                        <dt>明治保加利亚LB81酸奶明治保加利亚LB81酸奶明治保加利亚LB81酸奶(清甜原味)</dt>
+                        <dt>{{item}}(清甜原味)</dt>
                         <dd>180克</dd>
                         <div><strong>￥18.00</strong></div>
                     </dl>
                     <div class="qty">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-jianhao"></use>
-                        </svg>
+                        <em>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jianhao"></use>
+                            </svg>
+                        </em>
                         <span> 12 </span>
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-add"></use>
-                        </svg>
+                        <em>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-add"></use>
+                            </svg>
+                        </em>
                     </div>   
                 </div>                 
             </mt-cell-swipe>
@@ -65,6 +73,7 @@ export default {
 
 }
 </script>
+<<<<<<< HEAD
 <style lang="scss">
     .main-nav{
         box-shadow: 0,0,0,0;
@@ -76,11 +85,42 @@ export default {
     position: relative;
 }
 
+=======
+
+<style lang="scss">
+.mint-cell-title{
+    display: none;
+}
+.mint-cell-value{
+    width: 100%;
+}
+.main-nav{
+   
+}
+</style>
+<style scoped lang="scss">
+@import '../../assets/scss/mixin/mixins';
+.has-footer{
+    margin-bottom: 1rem;
+}
+
+.item{
+    
+    position: relative;
+}
+.mint-cell-title{
+    display: none;
+}
+>>>>>>> 6a3b9e5efec7aaf34170f8d5284f59bd39ebd77b
 .goods{
     position: relative;
     @include display;
     @include align-items;
     padding: .1rem 0;
+<<<<<<< HEAD
+=======
+    width: 100%;
+>>>>>>> 6a3b9e5efec7aaf34170f8d5284f59bd39ebd77b
     img{
         width: .8rem;
         height: .8rem;
@@ -99,6 +139,7 @@ export default {
         font-size: .12rem;
         height: .35rem;
         line-height: .16rem;
+<<<<<<< HEAD
     }
     dd{
         @include ellipsis;
@@ -133,5 +174,59 @@ export default {
     padding: .02rem;
     border-radius: 100%;
     border:.01rem solid $line;
+=======
+    }
+    dd{
+        @include ellipsis;
+        color: $gray-light;
+        height: .3rem;
+        line-height: .3rem;
+        font-size: .11rem;
+    }
+    strong{
+        color: $primary;
+        font-weight: normal;
+    }
+}
+.qty{
+    position: absolute;
+    bottom: 0;
+    right: 0rem;
+    text-align: center;
+    @include display;
+    em{
+        padding: .1rem;
+    }
+    span{
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        @include flex;
+        line-height: .42rem;
+        font-size: .13rem;
+    }
+}
+.icon {
+    width: .18rem; 
+    height: .18rem;
+    overflow: hidden;
+    fill: $primary;
+    border-radius: 100%;
+    border:.01rem solid $line;
+}
+.check{
+    padding: .1rem;
+    .icon{
+        width: .14rem;
+        height: .14rem;
+    }
+    .checked{
+        background: $primary;
+        border:.01rem solid $primary;
+        fill: #fff;
+    }
+>>>>>>> 6a3b9e5efec7aaf34170f8d5284f59bd39ebd77b
 }
 </style>
