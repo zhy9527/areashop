@@ -90,6 +90,19 @@ export default {
 
 }
 </script>
+<<<<<<< HEAD
+<style lang="scss">
+    .main-nav{
+        box-shadow: 0,0,0,0;
+    }
+</style>
+<style scoped lang="scss">
+@import '../../assets/scss/mixin/mixins';
+.item{
+    position: relative;
+}
+
+=======
 
 <style lang="scss">
 .mint-cell-title{
@@ -113,12 +126,16 @@ export default {
 .mint-cell-title{
     display: none;
 }
+>>>>>>> 6a3b9e5efec7aaf34170f8d5284f59bd39ebd77b
 .goods{
     position: relative;
     @include display;
     @include align-items;
     padding: .1rem 0;
+<<<<<<< HEAD
+=======
     width: 100%;
+>>>>>>> 6a3b9e5efec7aaf34170f8d5284f59bd39ebd77b
     img{
         width: .8rem;
         height: .8rem;
@@ -137,6 +154,42 @@ export default {
         font-size: .12rem;
         height: .35rem;
         line-height: .16rem;
+<<<<<<< HEAD
+    }
+    dd{
+        @include ellipsis;
+        color: $gray-light;
+        height: .3rem;
+        line-height: .3rem;
+        font-size: .11rem;
+    }
+    strong{
+        color: $primary;
+        font-weight: normal;
+    }
+}
+.qty{
+    position: absolute;
+    bottom: .1rem;
+    right: 0rem;
+    text-align: center;
+    @include display;
+    span{
+        @include flex;
+        line-height: .24rem;
+        padding: 0 .06rem;
+        font-size: .13rem;
+    }
+}
+.icon {
+    width: .18rem; 
+    height: .18rem;
+    overflow: hidden;
+    fill: $primary;
+    padding: .02rem;
+    border-radius: 100%;
+    border:.01rem solid $line;
+=======
     }
     dd{
         @include ellipsis;
@@ -189,6 +242,7 @@ export default {
         border:.01rem solid $primary;
         fill: #fff;
     }
+>>>>>>> 6a3b9e5efec7aaf34170f8d5284f59bd39ebd77b
 }
 .checkout{
     @include display;
