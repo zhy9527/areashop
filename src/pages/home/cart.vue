@@ -65,69 +65,73 @@ export default {
 
 }
 </script>
-
+<style lang="scss">
+    .main-nav{
+        box-shadow: 0,0,0,0;
+    }
+</style>
 <style scoped lang="scss">
-    @import '../../assets/scss/mixin/mixins';
-    .item{
-        
-        position: relative;
+@import '../../assets/scss/mixin/mixins';
+.item{
+    position: relative;
+}
+
+.goods{
+    position: relative;
+    @include display;
+    @include align-items;
+    padding: .1rem 0;
+    img{
+        width: .8rem;
+        height: .8rem;
+        margin: 0 .08rem;
+        border-radius: .04rem;
     }
-    .goods{
-        position: relative;
-        @include display;
-        @include align-items;
-        padding: .1rem 0;
-        img{
-            width: .8rem;
-            height: .8rem;
-            margin: 0 .08rem;
-            border-radius: .04rem;
-        }
-        dl{
-            @include flex;
-            div{
-                line-height: 1;
-            }
-        }
-        dt{
-            @include ellipsis(2);
-            color: $gray;
-            font-size: .12rem;
-            height: .35rem;
-            line-height: .16rem;
-        }
-        dd{
-            @include ellipsis;
-            color: $gray-light;
-            height: .3rem;
-            line-height: .3rem;
-            font-size: .11rem;
-        }
-        strong{
-            color: $primary;
-            font-weight: normal;
+    dl{
+        @include flex;
+        div{
+            line-height: 1;
         }
     }
-    .qty{
-        position: absolute;
-        bottom: .1rem;
-        right: 0rem;
-        text-align: center;
-        @include display;
-        span{
-            @include flex;
-            line-height: .24rem;
-            padding: 0 .06rem;
-            font-size: .13rem;
-        }
+    dt{
+        @include ellipsis(2);
+        color: $gray;
+        font-size: .12rem;
+        height: .35rem;
+        line-height: .16rem;
     }
-    .icon {
-        width: .18rem; 
-        height: .18rem;
-        overflow: hidden;
-        fill: $primary;
-        padding: .02rem;
-        border-radius: 100%;
-        border:.01rem solid $line;
+    dd{
+        @include ellipsis;
+        color: $gray-light;
+        height: .3rem;
+        line-height: .3rem;
+        font-size: .11rem;
     }
+    strong{
+        color: $primary;
+        font-weight: normal;
+    }
+}
+.qty{
+    position: absolute;
+    bottom: .1rem;
+    right: 0rem;
+    text-align: center;
+    @include display;
+    span{
+        @include flex;
+        line-height: .24rem;
+        padding: 0 .06rem;
+        font-size: .13rem;
+    }
+}
+.icon {
+    width: .18rem; 
+    height: .18rem;
+    overflow: hidden;
+    fill: $primary;
+    padding: .02rem;
+    border-radius: 100%;
+    border:.01rem solid $line;
+}
 </style>
