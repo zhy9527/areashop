@@ -43,14 +43,14 @@ export default {
 <style lang='scss' scoped>
     @import '../assets/scss/mixin/mixins';
     .has-footer{
-        margin-bottom: .5rem;
+        margin-bottom: .46rem;
     }
     .main-nav {
         @include fix-pos(auto, 0);
         @include display;
         box-shadow:0px -2px 2px 0px rgba(0,0,0,0.15);
         background: #fff;
-        height: .48rem;
+        height: .44rem;
         line-height: $line-height-s;
         z-index: 100;
         a {
@@ -66,6 +66,7 @@ export default {
         }
         span{
             font-size: .1rem;
+            font-weight: 200;
         }
         .icon {
             width: .26rem; 

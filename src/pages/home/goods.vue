@@ -105,7 +105,6 @@ export default {
             background: $primary;
             display: inline-block;
             padding:0 .2rem;
-            /*height: 3rem;*/
             line-height: .3rem;
             border-radius: .3rem;
         }
