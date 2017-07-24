@@ -1,13 +1,13 @@
 <template>
     <div class="item">
-        <a href="" v-for="item in goodsListDate" :key="item.id">
+        <router-link to="goods" v-for="item in goodsListDate" :key="item.id">
             <img :src="item.img" alt="">
             <span>{{item.name}}</span>
             <em>{{item.price}}</em>
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-gouwuche"></use>
             </svg>
-        </a>
+        </router-link>
     </div>
 </template>
 

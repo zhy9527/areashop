@@ -1,6 +1,6 @@
 .l_r{
 	@include display;
-	dt{
+	dd{
 		@include flex;
 	}
 }
@@ -13,3 +13,4 @@
 	background: rgba(0,0,0,.2);
 	z-index: 150;
 }
+

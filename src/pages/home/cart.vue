@@ -54,9 +54,9 @@
                 </div>
                 <span>共优惠￥189.00</span>
             </div>
-            <div class="btn">
+            <router-link class="btn" to="checkout">
                 结算
-            </div>
+            </router-link>
         </div>
         <v-footer></v-footer>
     </div>
@@ -90,14 +90,14 @@ export default {
 
 }
 </script>
-<<<<<<< HEAD
-<style lang="scss">
-    .main-nav{
-        box-shadow: 0,0,0,0;
-    }
-</style>
 <style lang="scss">
 @import '../../assets/scss/mixin/mixins';
+.main-nav{
+    box-shadow: 0,0,0,0;
+}
+.mint-cell-wrapper{
+    padding: 0 .08rem;
+}
 .mint-cell-title{
     display: none;
 }
@@ -111,13 +111,10 @@ export default {
 <style scoped lang="scss">
 @import '../../assets/scss/mixin/mixins';
 .has-footer{
-    margin-bottom: 1rem;
+    margin-bottom: .88rem;
 }
 .item{
     position: relative;
-}
-.mint-cell-title{
-    display: none;
 }
 .goods{
     position: relative;
@@ -203,7 +200,7 @@ export default {
     bottom: .45rem;
     width: 100%;
     background: #fff;
-    line-height: .4rem;
+    line-height: .44rem;
     box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.15);
     .check{
         text-align: left;
@@ -218,7 +215,7 @@ export default {
     }
     .price{
         padding: 0 .1rem;
-        margin-top: .06rem;
+        margin-top: .08rem;
         @include flex;
         line-height: 1;
         text-align: right;
@@ -244,6 +241,7 @@ export default {
         color: #fff;
         width: .8rem;
         text-align: center;
+        font-size: .18rem;
     }
 }
 </style>

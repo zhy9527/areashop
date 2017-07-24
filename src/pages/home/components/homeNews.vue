@@ -3,9 +3,9 @@
         <h3>小区快报: </h3>
         <swiper :options="swiperOption">
             <swiper-slide v-for="item in newsDate" :key="item.id">
-                <a :href="item.url">
+                <router-link :to="item.url">
                     {{ item.content }}
-                </a>
+                </router-link>
             </swiper-slide>
         </swiper>
     </div>

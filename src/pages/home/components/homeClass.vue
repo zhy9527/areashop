@@ -4,11 +4,11 @@
             <img :style="imgBigHeight" :src="item.img" alt="">
             <swiper :options="swiperOption" class="item">
                 <swiper-slide class="goods" v-for="list in item.goods" :key="list.id">
-                    <a href="">
+                    <router-link to="home">
                         <img :src="list.img" alt="">
                         <span>{{list.name}}</span>
                         <em>{{list.price}}</em>
-                    </a>
+                    </router-link>
                 </swiper-slide>
             </swiper>
         </div>

@@ -1,9 +1,9 @@
 <template>
     <swiper :options="swiperOption">
         <swiper-slide v-for="item in swiperDate.slide" :key="item.id" :style="imgHeight">
-            <a :href="item.url">
+            <router-link :to="item.url">
                 <img :src="item.content" alt="">
-            </a>
+            </router-link>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
     </swiper>

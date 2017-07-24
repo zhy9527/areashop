@@ -7,7 +7,7 @@
             <li :class="{ active: home.currentClass == 3 }" @click="tab(3)">肉类禽蛋</li>
         </ul>
         <div class="item" v-show="home.currentClass == 0">
-            <a href="">
+            <router-link to="goods">
                 <img src="https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg" alt="">
                 <dl>
                     <dt>明治保加利亚LB81酸奶明治保加利亚LB81酸奶明治保加利亚LB81酸奶(清甜原味)</dt>
@@ -17,10 +17,10 @@
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-gouwuche"></use>
                 </svg>
-            </a>
+            </router-link>
         </div>
         <div class="item" v-show="home.currentClass == 1">
-            <a href="">
+            <router-link to="goods">
                 <img src="https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg" alt="">
                 <dl>
                     <dt>明治保加利亚LB81酸奶明治保加利亚LB81酸奶明治保加利亚LB81酸奶(清甜原味)</dt>
@@ -30,8 +30,8 @@
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-gouwuche"></use>
                 </svg>
-            </a>
-            <a href="">
+            </router-link>
+            <router-link to="goods">
                 <img src="https://imgjd3.fruitday.com/images/product_pic/2163/1/1-370x370-2163-4UA8R1KX.jpg" alt="">
                 <dl>
                     <dt>明治保加利亚LB81</dt>
@@ -41,7 +41,7 @@
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-gouwuche"></use>
                 </svg>
-            </a>
+            </router-link>
         </div>
         <div class="item" v-show="home.currentClass == 2">
             3
@@ -61,7 +61,7 @@ export default {
     name: 'class',
     beforeCreate: function () {
         // console.log(Config)
-        this.$store.dispatch('getHomeAds');
+        // this.$store.dispatch('getHomeAds');
     },
     computed: {
         ...mapState({

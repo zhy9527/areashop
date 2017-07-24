@@ -1,5 +1,5 @@
 <template>
-    <router-view></router-view>
+    <router-view style="position: relative;"></router-view>
 </template>
 
 <script>
@@ -26,4 +26,5 @@ export default {
     @import './assets/scss/base/normalize';
     @import '../node_modules/mint-ui/lib/style.min.css';
     @import './assets/scss/base/common';
+    @import './assets/scss/base/iconfont';
 </style>

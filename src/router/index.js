@@ -12,6 +12,13 @@ import home from '../pages/home/home.vue'
 import goodsClass from '../pages/home/class.vue'
 import goods from '../pages/home/goods.vue'
 import cart from '../pages/home/cart.vue'
+import checkout from '../pages/home/checkout.vue'
+import addAddress from '../pages/home/addAddress.vue'
+import addressList from '../pages/home/addressList.vue'
+import me from '../pages/home/me.vue'
+import orders from '../pages/home/orders.vue'
+import order from '../pages/home/order.vue'
+import coupon from '../pages/home/coupon.vue'
 
 
 // import hello from '../pages/hello/components/hello.vue'
@@ -43,6 +50,13 @@ export default new Router({
         { path: '/class', component: goodsClass },
         { path: '/goods', component: goods },
         { path: '/cart', component: cart },
+        { path: '/checkout', component: checkout },
+        { path: '/addAddress', component: addAddress },
+        { path: '/addressList', component: addressList },
+        { path: '/me', component:  me },
+        { path: '/orders', component:  orders },
+        { path: '/order', component:  order },
+        { path: '/coupon', component:  coupon },
         
     ]
 })

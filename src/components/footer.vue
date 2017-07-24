@@ -67,14 +67,15 @@ export default {
         span{
             font-size: .1rem;
             font-weight: 200;
+            display: inherit;
         }
         .icon {
-            width: .26rem; 
-            height: .26rem;
+            width: .24rem; 
+            height: .24rem;
             display: block;
             margin: auto;
             overflow: hidden;
-            padding-top: .04rem;
+            padding: .04rem 0 .03rem 0;
         }
     }
 </style>
