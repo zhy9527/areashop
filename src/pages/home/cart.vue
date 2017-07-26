@@ -85,6 +85,9 @@ export default {
         // console.log('this is current swiper instance object', this)
         // this.swiper.slideTo(1)
     },
+    title () {
+        return '购物车'
+    },
     components: {
     }
 

@@ -41,6 +41,9 @@ export default {
             home: state => state.home,
         })
     },
+    title () {
+        return '优惠券'
+    },
     methods: {
         tab: function(index){
             this.$store.commit('CURRENT_CLASS_TAB', index)

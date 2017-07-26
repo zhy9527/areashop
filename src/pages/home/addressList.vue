@@ -46,6 +46,9 @@ export default {
             this.$store.commit('CURRENT_CLASS_TAB', index)
         }
     },
+    title () {
+        return '我的收获地址'
+    },
     components: {
     }
 
@@ -68,6 +71,7 @@ export default {
     em{
         margin-right: .1rem;
         font-size: .16rem;
+        color: $gray;
     }
     span{
         background: $gray-lighter;

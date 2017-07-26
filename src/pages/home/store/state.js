@@ -1,5 +1,4 @@
 export default {
-    title: '趣鱼网',
     homeAds:'',
     currentArea:'睿智禧园',
     currentClass: 0,

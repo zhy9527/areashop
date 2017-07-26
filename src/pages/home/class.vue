@@ -73,6 +73,9 @@ export default {
             this.$store.commit('CURRENT_CLASS_TAB', index)
         }
     },
+    title () {
+        return '分类'
+    },
     components: {
         'v-footer': footer,
     }

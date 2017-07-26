@@ -39,6 +39,11 @@ export default {
         // console.log(Config)
         this.$store.dispatch('getHomeAds');
     },
+    mounted: function(){
+    },
+    title () {
+        return '首页'
+    },
     computed: {
         ...mapState({
             home: state => state.home,

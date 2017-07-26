@@ -63,6 +63,9 @@ export default {
             this.currTab = index
         }
     },
+    title () {
+        return '商品详情'
+    },
     components: {
         'goods-list': goodsList
     }

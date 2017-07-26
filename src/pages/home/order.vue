@@ -62,6 +62,9 @@ export default {
             this.$store.commit('CURRENT_CLASS_TAB', index)
         }
     },
+    title () {
+        return '订单详情'
+    },
     components: {
     }
 

@@ -69,6 +69,9 @@ export default {
             }
         }
     },
+    title () {
+        return '地址详情'
+    },
     components: {
     }
 
@@ -98,6 +101,7 @@ dl{
     padding-right: .08rem;
     dt{
         width: .8rem;
+        color: $gray-light;
     }
     &:last-of-type{
         border-bottom: none;
@@ -105,7 +109,7 @@ dl{
 }
 input{
     width: 100%;
-    height: .44rem;
+    height: .42rem;
     border:none;
     outline: none;
 }

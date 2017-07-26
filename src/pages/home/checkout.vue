@@ -134,6 +134,9 @@ export default {
         // console.log('this is current swiper instance object', this)
         // this.swiper.slideTo(1)
     },
+    title () {
+        return '确认订单'
+    },
     components: {
     }
 
