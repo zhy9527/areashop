@@ -27,7 +27,7 @@
             </router-link>
         </div>
         <div class="order-nav">
-            <router-link to="orders">
+            <router-link to="coupon">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-youhuiquan"></use>
                 </svg>

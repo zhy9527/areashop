@@ -6,11 +6,18 @@
                 <div><span>睿智禧园</span></div>
                 <div><small>1号楼2单元，18021号楼2单元，18021号楼2单元，18021号楼2单元，18021号楼2单元，18021号楼2单元，1802</small></div>
             </div>
-            <router-link to="/addAddress">
-                <svg class="icon">
-                    <use xlink:href="#icon-bianji"></use>
-                </svg>
-            </router-link>
+            <div class="edit">
+                <div>
+                    <svg class="icon">
+                        <use xlink:href="#icon-lajixiang"></use>
+                    </svg>
+                </div>
+                <router-link to="/addAddress">
+                    <svg class="icon">
+                        <use xlink:href="#icon-bianji"></use>
+                    </svg>
+                </router-link>
+            </div>
         </div>
         <div class="item">
             <div class="info">
@@ -18,11 +25,18 @@
                 <div><span>睿智禧园</span></div>
                 <div><small>1号楼2单元，18021号楼2单元，1802</small></div>
             </div>
-            <router-link to="/addAddress">
-                <svg class="icon">
-                    <use xlink:href="#icon-bianji"></use>
-                </svg>
-            </router-link>
+            <div class="edit">
+                <div>
+                    <svg class="icon">
+                        <use xlink:href="#icon-lajixiang"></use>
+                    </svg>
+                </div>
+                <router-link to="/addAddress">
+                    <svg class="icon">
+                        <use xlink:href="#icon-bianji"></use>
+                    </svg>
+                </router-link>
+            </div>
         </div>
     </div>
 </template>
@@ -59,7 +73,7 @@ export default {
     @import '../../assets/scss/mixin/mixins';
     .item{
         background: #fff;
-        padding: .08rem;
+        padding: .08rem 0 .08rem .08rem;
         @include display;
         @include align-items;
         margin-bottom: .1rem;
@@ -86,8 +100,11 @@ export default {
         color: $gray-light;
         line-height: 1.4;
     }
-    a{
-        padding: .1rem;
+    .edit{
+        div,a{
+            display: block;
+            padding: .1rem;
+        }
     }
     .icon{
         width: .26rem;
