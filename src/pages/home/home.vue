@@ -10,7 +10,7 @@
             <span>简单点，生活的方式简单点</span>
         </div>
         <goods-list :goodsListDate="home.homeClass[0].goods"></goods-list>
-        <home-header></home-header>
+        <!-- <home-header></home-header> -->
         <v-footer></v-footer>
         <div class="cover" @click="areaSelect(0)" v-if="home.areaListState">
             <div class="area-list">

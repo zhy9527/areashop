@@ -36,15 +36,15 @@ export default new Router({
     base: '',
     history: false,
     hashbang: true,
+    scrollBehavior (to, from, savedPosition) {
+        return savedPosition ? savedPosition : { x: 0, y: 0 };
+    },
     routes: [
         { path: '*', component: notFoundComponent },
         { path: '/', component: home },
-        // { path: '/hello', component: hello },
         { path: '/home', component: homeIndex,
             children: [
                 { path: '', component: home },
-                // { path: '/home/category', component: category },
-                // { path: '/home/goodsDetail', component: goodsDetail }
             ]
         },
         { path: '/class', component: goodsClass },

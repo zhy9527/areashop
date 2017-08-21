@@ -1,6 +1,6 @@
 <template>
     <div class="item">
-        <router-link to="goods" v-for="item in goodsListDate" :key="item.id">
+        <router-link to="/goods" v-for="item in goodsListDate" :key="item.id">
             <img :src="item.img" alt="">
             <span>{{item.name}}</span>
             <em>{{item.price}}</em>
@@ -11,7 +11,7 @@
     </div>
 </template>
 
-<script>  
+<script>
 export default {
     name: 'goodsList',
     props: {

@@ -52,7 +52,14 @@ module.exports = {
         hints: false
     },
     // devtool: '#eval-source-map'
-    devtool: '#source-map'
+    devtool: '#source-map',
+    plugins: [
+        //CommonsChunkPlugin 有助于提取这些依赖到共享的 bundle 中，来避免重复打包
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: 'vendor-[hash].min.js'
+        })
+    ]
 }
 
 if (process.env.NODE_ENV === 'production') {
