@@ -6,21 +6,24 @@
  */
 import Vue from 'vue'
 // 自定义公共组件
-import Footer from './footer.vue'
-import SwiperBanner from './swiper.vue'
 // mint-u组件
-import { CellSwipe,
-		 DatetimePicker,
-		 Popup,
-		 Picker
-		} from 'mint-ui'
+// import {
+// 		 CellSwipe,
+// 		 DatetimePicker,
+// 		 Popup,
+// 		 Picker,
+		 // MessageBox
+		// } from 'mint-ui'
 
 
-Vue.component('swiper', SwiperBanner);
 // mint-u组件
-Vue.component('mt-cell-swipe', CellSwipe);
-Vue.component('mt-datetime-picker', DatetimePicker);
-Vue.component('mt-popup', Popup);
-Vue.component('mt-picker', Picker);
+// Vue.component('mt-cell-swipe', CellSwipe);
+// Vue.component('mt-datetime-picker', DatetimePicker);
+// Vue.component('mt-popup', Popup);
+// Vue.component('mt-picker', Picker);
+// Vue.component('mt-MessageBox', MessageBox);
+
 // 自定义公共组件
-Vue.component('v-footer', Footer);
+// Vue.component('v-footer', ()=>import('./footer.vue'));
+Vue.component('v-header', ()=>import('./header.vue'));
+// Vue.component('v-bottom', ()=>import('./bottom.vue'));

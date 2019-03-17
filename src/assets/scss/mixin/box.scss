@@ -1,3 +1,78 @@
+// Box
+@mixin box {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: -o-box;
+    display: box;
+}
+
+// Box-flex
+@mixin box-flex($value: 1) {
+    -webkit-box-flex: $value;
+    -moz-box-flex: $value;
+    -ms-box-flex: $value;
+    -o-box-flex: $value;
+    box-flex: $value;
+}
+
+// Box sizing
+@mixin box-sizing($value) {
+    -webkit-box-sizing: $value;
+    -moz-box-sizing: $value;
+    -ms-box-sizing: $value;
+    -o-box-sizing: $value;
+    box-sizing: $value;
+}
+
+/* Box pack,横轴对其方式
+** start:左对齐
+** end: 右对齐
+** center:中间对齐
+** justify:两端对齐
+*/
+@mixin box-pack($value: center) {
+    -webkit-box-pack: $value;
+    -moz-box-pack: $value;
+    -ms-box-pack: $value;
+    -o-box-pack: $value;
+    box-pack: $value;
+}
+
+//Box align,纵轴对齐方式
+@mixin box-align($value: center) {
+    -webkit-box-align: $value;
+    -moz-box-align: $value;
+    -ms-box-align: $value;
+    -o-box-align: $value;
+    box-align: $value;
+}
+
+//appearance
+@mixin appearance {
+    -webkit-box-appearance: none;
+    -moz-box-appearance: none;
+    -ms-box-appearance: none;
+    -o-box-appearance: none;
+    box-appearance: none;
+}
+
+
+/* 项目排列方向
+** horizontal: 从左到右排列
+** vertical: 从上到下垂直排列
+** inline-axis: 沿着行内轴来排列子元素
+** block-axis: 沿着块轴来排列子元素
+** inherit: 从父级继承box-orient属性
+*/
+@mixin box-orient($value: horizontal) {
+    -webkit-box-orient: $value;
+    -moz-box-orient: $value;
+    -ms-box-orient: $value;
+    -o-box-orient: $value;
+    box-orient: $value;
+}
+
 // 新标准
 //display
 @mixin display {
@@ -59,4 +134,13 @@
     -ms-align-items: $value;
     -o-align-items: $value;
     align-items: $value;
+}
+
+//单个项目纵轴对其方式
+@mixin align-self($value: center) {
+    -webkit-align-self: $value;
+    -moz-align-self: $value;
+    -ms-align-self: $value;
+    -o-align-self: $value;
+    align-self: $value;
 }

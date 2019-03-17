@@ -1,9 +1,5 @@
-import home from '../pages/home/store/index.js'
-import hello from '../pages/hello/store/index.js'
-import group from '../pages/group/store/index.js'
+import active from '../pages/active/store/index.js'   //员工福利
 
 export {
-	home,
-	hello,
-	group
+	active
 }

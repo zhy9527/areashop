@@ -3,9 +3,10 @@
  */
 
 $gray-dark:           #000 !default;
-$gray:                #515151 !default;
-$gray-light:          #8a8a8a !default;
+$gray:                #3a3a3a !default;
+$gray-light:          #878787 !default;
 $gray-lighter:        #eee !default;
+$gray-lightest:              #bfbfbf !default;
 
 /*
  *分割线
@@ -15,9 +16,8 @@ $line: #dcdcdc !default;
 /*
  *主要和次要颜色
  */
-$primary:             #e9521a !default;
-$secondary:           #77b22a !default;
-$tertiary:            #f5b517 !default;
+$primary:             #75A739 !default;
+$secondary:           #ff8000 !default;
 
 
 /*
@@ -37,7 +37,7 @@ $link-hover:      underline !default;
  *Font, line-height, and color for body text, headings, and more.
  */
 
-$font-family:      Arial,"Microsoft Yahei" ,sans-serif !default;
+$font-family:      "Microsoft Yahei",sans-serif,Arial !default;
 $font-size-root:             100px !default;
 
 

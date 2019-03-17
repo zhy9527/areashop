@@ -1,12 +1,15 @@
 import Vue from 'vue'
-import store from './store'
 import App from './App.vue'
 import fastClick from 'fastclick'
+import VueLazyload from 'vue-lazyload'
 import './components/index'  //注册全局组件
-import utils from './utils'
-import title from './mixins/title'
+import './utils'
+import store from './store'
+import title from './utils/title'
+import * as filters from './utils/filters'	//过滤器
+import * as prototype from './utils/prototype'	//APP交互协议
 import router from './router'
-import Common from './plugins/common.js'
+
 
 
 if ('addEventListener' in document) {
@@ -14,12 +17,15 @@ if ('addEventListener' in document) {
         fastClick.attach(document.body);
     }, false);
 }
-// 混合器
-Vue.mixin(title)  //标题
+
+Vue.mixin(title)
+Vue.use(prototype)
+Vue.use(VueLazyload)
+
+// 过滤器
+Object.keys(filters).forEach(key => Vue.filter(key, filters[key]))
 
 Vue.config.productionTip = false
-
-Vue.use(Common);
 
 new Vue({
     el: '#app',
@@ -28,4 +34,3 @@ new Vue({
     template: '<App/>',
     components: { App }
 })
-

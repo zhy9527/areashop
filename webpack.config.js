@@ -1,15 +1,12 @@
-var path = require('path')
+    var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-    entry: {
-        main: './src/main.js',
-        group: './src/group.js'
-    },
+    entry: ['./src/main.js'],
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist/',
-        filename: '[name].bundle.js'
+        filename: 'build.js'
     },
     module: {
         rules: [{
@@ -22,12 +19,17 @@ module.exports = {
                 }
             }
         }, {
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['env']
+                }
+            }
+        }, {
             test: /\.(css|scss)$/,
             loader:"css-loader"
-        }, {
-            test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: /node_modules/
         }, {
             test: /\.(png|jpg|gif|svg)$/,
             loader: 'file-loader',
@@ -51,34 +53,18 @@ module.exports = {
     performance: {
         hints: false
     },
-    // devtool: '#eval-source-map'
-    devtool: '#source-map',
+    // devtool: 'cheap-module-source-map',
+    devtool: false,
     plugins: [
-        //CommonsChunkPlugin 有助于提取这些依赖到共享的 bundle 中，来避免重复打包
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            filename: 'vendor-[hash].min.js'
-        })
-    ]
-}
-
-if (process.env.NODE_ENV === 'production') {
-    module.exports.devtool = '#source-map'
-        // http://vue-loader.vuejs.org/en/workflow/production.html
-    module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
             'process.env': {
-                NODE_ENV: '"production"'
+                'NODE_ENV': '"production"'
             }
         }),
         new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
             compress: {
                 warnings: false
             }
-        }),
-        new webpack.LoaderOptionsPlugin({
-            minimize: true
         })
-    ])
+    ]
 }

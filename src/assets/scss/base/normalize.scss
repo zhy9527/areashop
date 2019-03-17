@@ -26,8 +26,10 @@ html {
 body {
     margin: 0 auto;
     font-size: $font-size;
+    font-weight: 300;
     max-width: 7.5rem;
     background: $gray-lighter;
+    color: #333;
 }
 
 // HTML5 display definitions
@@ -173,8 +175,6 @@ mark {
 //
 
 small {
-    font-weight: 200;
-
 }
 
 //
